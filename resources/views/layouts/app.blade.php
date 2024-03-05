@@ -31,6 +31,10 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <footer class="p-4 mt-12 text-center">
+                Generate fun sticker. Made with ❤️ by <a class="text-indigo-700 underline" href="https://ahmadrosid.com">@ahmadrosid</a> using Laravel
+            </footer>
         </div>
     </body>
 </html>
