@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
 use App\Models\Sticker;
+use Illuminate\Support\Facades\Storage;
 
 class GenerationController extends Controller
 {
@@ -80,9 +81,17 @@ class GenerationController extends Controller
         if ($response->successful()) {
             $data = $response->json();
             if (isset($data['output'])) {
-                $sticker->sticker_url = $data['output'][0];
-                $sticker->status = Sticker::STATUS_SUCCESS;
-                $sticker->save();
+                $url_sticker = $data['output'][0];
+                $fileContent = Http::get($url_sticker);
+                $stickerId = $sticker->id;
+                $filename = "prediction-{$stickerId}-sticker.png";
+                $result = Storage::disk('s3')->put($filename, $fileContent);
+                if ($result) {
+                    logger(Storage::disk('s3')->url($filename));
+                    $sticker->sticker_url = Storage::disk('s3')->url($filename);
+                    $sticker->status = Sticker::STATUS_SUCCESS;
+                    $sticker->save();
+                }
             }
             return response()->json([
                 'data' => $sticker,
