@@ -10,3 +10,7 @@ REPLICATE_API_TOKEN=r8_Y0APF...
 
 ![demo](./demo.png)
 
+## Models
+
+Get model on replicate: [fofr/sticker-maker](https://replicate.com/fofr/sticker-maker)
+
