@@ -1,4 +1,10 @@
 <x-guest-layout>
+
+    <div class="text-center pb-8 my-4">
+        <h2 class="text-2xl tracking-tighter text-black">
+            Login to your account
+        </h2>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,4 +55,5 @@
             </x-primary-button>
         </div>
     </form>
+
 </x-guest-layout>

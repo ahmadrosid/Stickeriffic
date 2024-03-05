@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shadow-inside::before {
+    @apply bg-gradient-to-b from-[#04D2A9] via-[#06D1A9] to-[#06D1A9]
+}
+
+.bg-btn {
+    @apply bg-gradient-to-b from-[#4FDFC3] via-[#2DD9B7] to-[#07D3AA]
+}
