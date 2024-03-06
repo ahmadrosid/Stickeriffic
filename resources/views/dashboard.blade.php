@@ -25,7 +25,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 px-9 gap-4">
                 @foreach($stickers as $sticker)
                 @if(!$sticker->sticker_url)
-                <div class="bg-indigo-500/75 grid place-content-center rounded-md min-h-[250px] shadow-md">
+                <div class="bg-indigo-500/75 grid place-content-center rounded-md min-h-[230px] shadow-md">
                     <button type="button" class="flex text-white">
                         <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
