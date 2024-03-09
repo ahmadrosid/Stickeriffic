@@ -42,7 +42,7 @@
                                 if (!response.ok) {
                                 throw new Error('Network response was not ok');
                                 }
-                                return response.json(); // Parse the JSON in the response
+                                return response.json();
                             })
                             .then(data => {
                                 console.log(data)
